@@ -1,0 +1,15 @@
+{
+  "description": "local-persist plugin for Docker",
+  "documentation": "https://docs.docker.com/engine/extend/plugins/",
+  "entrypoint": ["/docker-volume-local-persist"],
+  "network": {
+    "type": "host"
+  },
+  "interface" : {
+    "types": ["docker.volumedriver/1.0"],
+    "socket": "local-persist.sock"
+  },
+  "linux": {
+    "capabilities": ["CAP_SYS_ADMIN"]
+  }
+}
